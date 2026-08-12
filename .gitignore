@@ -1,0 +1,16 @@
+# dependencies / local
+node_modules/
+.vercel/
+
+# heavy local extracts (not for web deploy)
+apk-extract/
+tools/
+pdf-preview/
+*.apk
+*.jar
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+js/config.js

@@ -1,0 +1,11 @@
+# Keep Vercel upload small — only ship the website
+apk-extract/
+tools/
+pdf-preview/
+.git/
+node_modules/
+.vercel/
+*.apk
+*.jar
+*.md
+agent-transcripts/

@@ -1,0 +1,13 @@
+{
+  "name": "banreservas-app-ui",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Banreservas app UI recreation (static)",
+  "scripts": {
+    "dev": "npx --yes serve . -l 5173",
+    "start": "npx --yes serve . -l 5173",
+    "python": "python -m http.server 5173 --bind 127.0.0.1",
+    "deploy": "npx --yes vercel",
+    "deploy:prod": "npx --yes vercel --prod"
+  }
+}

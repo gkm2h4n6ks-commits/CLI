@@ -1,0 +1,23 @@
+{
+  "welcome": "Bienvenido a tu",
+  "alma_zone": "Alma Asistente Virtual",
+  "alma": "Alma",
+  "loading": "Cargando,",
+  "please_wait": "por favor espera.",
+  "token": "Token Digital",
+  "unlink": "Desvincular",
+  "geo": "Geolocalización",
+  "promo": "Promociones",
+  "show_products": "VER MIS PRODUCTOS",
+  "i18n.digitalWallet.acceptConditions.iAcceptConditions": "He leído y acepto los términos de uso",
+  "i18n.digitalWallet.wallet": "Billetera",
+  "i18n.phone.Calculator": "Calculadora",
+  "i18n.phone.CalculatoreAndRates": "Calculadoras y divisas",
+  "i18n.phone.Contact": "Contacto",
+  "i18n.phone.ForgotPassword": "¿Olvidaste tu contraseña?",
+  "i18n.phone.LoanCalculator": "Calculadora de préstamos",
+  "i18n.phone.MioBanreservas": "Mio Banreservas",
+  "i18n.phone.Password": "CONTRASEÑA",
+  "i18n.phone.Terms.Conditions": "Términos y condiciones",
+  "i18n.phone.enter.capitalized": "Acceder"
+}

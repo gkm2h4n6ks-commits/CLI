@@ -1,0 +1,36 @@
+{
+  "apk": "Banreservas_6.3.0.apk",
+  "framework": "Kony / Temenos Infinity Visualizer",
+  "package_hints": ["com.konylabs.banreservas", "com.banreservas.tubancoappmobile"],
+  "theme_colors": {
+    "splash_bg": "#074673",
+    "form_bg": "#074673",
+    "primary_button": "#00AEF0",
+    "orange_accent": "#F89420",
+    "welcome_app_title": "#F89421",
+    "token_info_card": "#00558C",
+    "disabled_button": "#B1B3B5",
+    "text_dark": "#353536"
+  },
+  "fonts": ["OpenSans-Bold", "OpenSans-SemiBold", "Helvetica"],
+  "key_assets": {
+    "logo_vertical": "assets/apk/logobr_vertical.png",
+    "logo_horizontal": "assets/apk/banreservas_logo.png",
+    "wallet": "assets/apk/wallet_white_icon.png",
+    "token": "assets/apk/token_white_icon.png",
+    "token_lock": "assets/apk/lock_digital_token.png",
+    "alma": "assets/apk/alma_white_icon.png",
+    "fingerprint": "assets/apk/huella_01.png",
+    "sb_seal": "assets/apk/logosb.png"
+  },
+  "screens_mapped": [
+    "Splash (sknSplash)",
+    "Prelogin / Bienvenida",
+    "Hamburger menu",
+    "Login",
+    "Loading popup",
+    "Token Digital",
+    "Alma chat"
+  ],
+  "notes": "UI definitions live mainly in assets/default.theme + es.prop + drawable PNGs, not classic Android XML layouts."
+}

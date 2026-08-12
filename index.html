@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#074673" />
+  <title>Banreservas</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="assets/apk/logobr_vertical_t.png" type="image/png" />
+</head>
+<body>
+  <div class="device">
+    <div class="app" id="app">
+
+      <!-- SPLASH -->
+      <section class="screen screen--splash is-active" data-screen="splash">
+        <img src="assets/apk/logobr_vertical_t.png" alt="Banreservas" class="brand-mark brand-mark--splash" />
+      </section>
+
+      <!-- WELCOME -->
+      <section class="screen screen--navy screen--welcome" data-screen="welcome">
+        <header class="topbar">
+          <button class="icon-btn" id="btn-menu" type="button" aria-label="Menú"><span class="hamburger"></span></button>
+        </header>
+        <div class="welcome-brand"><img src="assets/apk/logobr_vertical_t.png" alt="Banreservas" class="brand-mark brand-mark--sm" /></div>
+        <div class="welcome-copy">
+          <p class="welcome-copy__lead">Bienvenido a tu</p>
+          <h2 class="welcome-copy__title">App Banreservas</h2>
+        </div>
+        <div class="welcome-actions">
+          <div class="quick-grid">
+            <button class="quick-tile" type="button" data-go="wallet" data-loading>
+              <span class="quick-tile__slot"><img class="quick-tile__icon quick-tile__icon--wallet" src="assets/apk/wallet_white_icon_t.png" alt="" /></span><span>Billetera</span>
+            </button>
+            <button class="quick-tile" type="button" data-go="token" data-loading>
+              <span class="quick-tile__slot"><img class="quick-tile__icon quick-tile__icon--token" src="assets/apk/token_white_icon_t.png" alt="" /></span><span>Token Digital</span>
+            </button>
+            <button class="quick-tile" type="button" data-go="alma" data-loading>
+              <span class="quick-tile__slot"><img class="quick-tile__icon quick-tile__icon--alma" src="assets/apk/alma_white_icon_t.png" alt="" /></span><span>Alma</span>
+            </button>
+          </div>
+          <button class="btn btn--primary btn--block" type="button" data-go="login">Acceder</button>
+        </div>
+      </section>
+
+      <!-- LOGIN -->
+      <section class="screen screen--navy screen--login" data-screen="login">
+        <header class="topbar">
+          <button class="icon-btn" type="button" data-go="welcome" data-back aria-label="Volver"><img src="assets/apk/back_arrow.png" alt="" /></button>
+        </header>
+        <div class="login-brand"><img src="assets/apk/logobr_vertical_t.png" alt="Banreservas" class="brand-mark brand-mark--md" /></div>
+        <form class="login-form" id="login-form">
+          <div class="field-card">
+            <label class="field">
+              <svg class="field__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" aria-hidden="true"><circle cx="12" cy="12" r="9.25"/><circle cx="12" cy="9.2" r="2.65"/><path d="M7.2 17.2c1.35-2.2 3.1-3 4.8-3s3.45.8 4.8 3" stroke-linecap="round"/></svg>
+              <input id="user-id" type="text" inputmode="numeric" placeholder="USUARIO" aria-label="Usuario" autocomplete="username" />
+              <button type="button" class="field__clear" id="clear-user" aria-label="Limpiar" hidden>×</button>
+            </label>
+            <div class="field-card__divider"></div>
+            <label class="field">
+              <svg class="field__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" aria-hidden="true"><rect x="5.5" y="11" width="13" height="9.5" rx="1.8"/><path d="M8.5 11V8.8a3.5 3.5 0 0 1 7 0V11" stroke-linecap="round"/></svg>
+              <input id="password" type="password" placeholder="CONTRASEÑA" aria-label="Contraseña" autocomplete="current-password" />
+            </label>
+          </div>
+          <div class="login-row">
+            <button type="submit" class="btn btn--access" id="btn-access" disabled>ACCEDER</button>
+            <button type="button" class="bio-btn" aria-label="Huella"><img src="assets/apk/huella_01_t.png" alt="" class="bio-btn__img bio-btn__img--gray" /></button>
+          </div>
+        </form>
+        <a href="#" class="text-link" id="forgot-link">¿Olvidaste tu contraseña?</a>
+        <a href="#" class="text-link text-link--footer">Términos y condiciones</a>
+      </section>
+
+      <!-- INICIO / CUENTAS -->
+      <section class="screen screen--light" data-screen="products">
+        <header class="br-header">
+          <img src="assets/apk/br_logo_horizontal.png" alt="Banreservas" class="br-header__logo" />
+        </header>
+        <div class="subhead">Cuentas</div>
+        <div class="page-scroll page-scroll--flush">
+          <article class="account-row">
+            <span class="account-row__bar"></span>
+            <div class="account-row__body">
+              <p class="account-row__title">*4826 | Cuenta de ahorro</p>
+              <div class="account-row__meta">
+                <strong class="amount-blur" data-amount>DOP 1,703.42</strong>
+                <span>Balance disponible</span>
+              </div>
+            </div>
+          </article>
+        </div>
+        <nav class="tabbar" data-tabbar data-active="products"></nav>
+      </section>
+
+      <!-- TRANSACCIONES -->
+      <section class="screen screen--light" data-screen="transactions">
+        <header class="page-title-bar">Transacciones</header>
+        <div class="page-scroll page-scroll--list">
+          <button class="plain-row" type="button">Pagos y transferencias <img src="assets/apk/chevron_right.png" alt="" class="chev" /></button>
+          <button class="plain-row" type="button">Impuestos y servicios <img src="assets/apk/chevron_right.png" alt="" class="chev" /></button>
+          <button class="plain-row" type="button">TuEfectivo <img src="assets/apk/chevron_right.png" alt="" class="chev" /></button>
+          <button class="plain-row" type="button">Avance de efectivo <img src="assets/apk/chevron_right.png" alt="" class="chev" /></button>
+          <button class="plain-row" type="button">Serrucho <img src="assets/apk/chevron_right.png" alt="" class="chev" /></button>
+          <button class="plain-row" type="button">Encuéntrame <img src="assets/apk/chevron_right.png" alt="" class="chev" /></button>
+          <button class="plain-row" type="button">Depósito de cheques <img src="assets/apk/chevron_right.png" alt="" class="chev" /></button>
+        </div>
+        <nav class="tabbar" data-tabbar data-active="transactions"></nav>
+      </section>
+
+      <!-- SOLICITUDES -->
+      <section class="screen screen--light screen--requests" data-screen="requests">
+        <header class="page-title-bar">Solicitudes</header>
+        <div class="page-scroll">
+          <button class="req-card" type="button"><span>Seguimiento de Solicitudes</span><img src="assets/apk/chevron_right.png" alt="" class="chev" /></button>
+          <button class="req-card" type="button"><img src="assets/apk/balance.png" alt="" /><span>Cuentas</span><img src="assets/apk/chevron_right.png" alt="" class="chev" /></button>
+          <button class="req-card" type="button"><img src="assets/apk/card_icon_blue1.png" alt="" /><span>Tarjeta de crédito</span><img src="assets/apk/chevron_right.png" alt="" class="chev" /></button>
+          <button class="req-card" type="button"><img src="assets/apk/card_money_icon.png" alt="" /><span>Préstamos</span><img src="assets/apk/chevron_right.png" alt="" class="chev" /></button>
+          <button class="req-card" type="button"><img src="assets/apk/money.png" alt="" /><span>Depósito a Plazo Digital</span><img src="assets/apk/chevron_right.png" alt="" class="chev" /></button>
+          <p class="muted-label">Otros servicios</p>
+          <button class="req-card" type="button"><img src="assets/apk/certification_icon.png" alt="" /><span>Certificaciones</span><img src="assets/apk/chevron_right.png" alt="" class="chev" /></button>
+        </div>
+        <nav class="tabbar" data-tabbar data-active="requests"></nav>
+      </section>
+
+      <!-- MÁS OPCIONES -->
+      <section class="screen screen--light screen--more" data-screen="more">
+        <header class="more-header">
+          <div class="more-header__top">
+            <h2>Más opciones</h2>
+            <button class="icon-btn" type="button" data-go="welcome" data-back aria-label="Cerrar sesión"><img src="assets/apk/logout.png" alt="" class="icon-white" /></button>
+          </div>
+          <button class="profile-row" type="button">
+            <span class="avatar"><img src="assets/apk/user.png" alt="" /><i>+</i></span>
+            <span class="profile-row__text">
+              <strong>Usuario</strong>
+              <small>Última visita —</small>
+            </span>
+            <span class="chev-light">›</span>
+          </button>
+        </header>
+        <div class="page-scroll">
+          <article class="token-widget">
+            <div class="token-widget__left">
+              <img src="assets/apk/lock_digital_token_t.png" alt="" />
+              <div>
+                <strong>Token Digital</strong>
+                <small>Nuevo código en: <b id="more-token-secs">12s</b></small>
+              </div>
+            </div>
+            <button class="token-widget__code" type="button" id="copy-more-token">
+              <span id="more-token-value">416 808</span>
+              <img src="assets/apk/content_copy.png" alt="" />
+            </button>
+          </article>
+          <button class="plain-row" type="button"><img src="assets/apk/puntos_icon.png" alt="" class="row-icon" /> Puntos Banreservas <img src="assets/apk/chevron_right.png" alt="" class="chev" /></button>
+          <button class="plain-row" type="button">Cuenta principal <img src="assets/apk/chevron_right.png" alt="" class="chev" /></button>
+          <div class="section-band">Beneficiarios</div>
+          <button class="plain-row" type="button">Productos <img src="assets/apk/chevron_right.png" alt="" class="chev" /></button>
+          <button class="plain-row" type="button">Servicios <img src="assets/apk/chevron_right.png" alt="" class="chev" /></button>
+          <button class="plain-row" type="button">TuEfectivo <img src="assets/apk/chevron_right.png" alt="" class="chev" /></button>
+          <div class="section-band">Tarjeta de Crédito</div>
+          <button class="plain-row" type="button" data-go="token" data-loading>Token Digital <img src="assets/apk/chevron_right.png" alt="" class="chev" /></button>
+          <button class="plain-row" type="button" data-go="wallet" data-loading>Billetera <img src="assets/apk/chevron_right.png" alt="" class="chev" /></button>
+          <button class="plain-row" type="button" data-go="alma" data-loading>Alma <img src="assets/apk/chevron_right.png" alt="" class="chev" /></button>
+        </div>
+        <nav class="tabbar" data-tabbar data-active="more"></nav>
+      </section>
+
+      <!-- TOKEN -->
+      <section class="screen screen--navy screen--token" data-screen="token">
+        <header class="topbar topbar--spread">
+          <button class="icon-btn" type="button" data-go="more" data-back aria-label="Volver"><img src="assets/apk/back_arrow.png" alt="" /></button>
+          <button class="text-action" type="button">Desvincular <img src="assets/apk/unlink_token_t.png" alt="" /></button>
+        </header>
+        <div class="token-hero">
+          <img src="assets/apk/lock_digital_token_t.png" alt="" class="token-lock__img" />
+          <h2 class="token-title">Token Digital</h2>
+        </div>
+        <div class="token-code">
+          <span class="token-code__fill" id="token-fill"></span>
+          <span class="token-code__value" id="token-value">514 428</span>
+          <button class="token-code__copy" id="copy-token" type="button" aria-label="Copiar"><img src="assets/apk/content_copy.png" alt="" /></button>
+        </div>
+        <p class="token-timer">Nuevo código en: <strong id="token-secs">56s</strong></p>
+        <article class="info-card">
+          <h3>Importante</h3>
+          <p>Ahora, con nuestros nuevos agentes, te brindamos soporte por WhatsApp, correo o llamadas telefónicas.</p>
+          <button class="info-card__link" type="button"><span>Ver más consejos de seguridad</span><img src="assets/apk/chevron_right.png" alt="" /></button>
+        </article>
+        <div class="screen-footer">
+          <button class="btn btn--primary btn--block" type="button" data-go="products" data-loading>Ir a mis productos</button>
+        </div>
+      </section>
+
+      <!-- WALLET -->
+      <section class="screen screen--light" data-screen="wallet">
+        <header class="page-title-bar page-title-bar--with-back">
+          <button class="icon-btn" type="button" data-go="more" data-back aria-label="Volver"><img src="assets/apk/back_arrow.png" alt="" /></button>
+          <h2>Billetera Banreservas</h2>
+          <span></span>
+        </header>
+        <div class="page-scroll">
+          <div class="wallet-hero">
+            <img src="assets/apk/digital_wallet_icon_t.png" alt="" class="wallet-hero__icon" />
+            <p>Hola</p>
+            <h3>Visualiza tus tarjetas digitales a continuación:</h3>
+          </div>
+          <div class="wallet-cards">
+            <article class="wallet-card">
+              <img src="assets/apk/visa_card_blue.png" alt="Visa" />
+              <div><strong>Visa Platinum</strong><span>**** 8890</span></div>
+            </article>
+            <article class="wallet-card">
+              <img src="assets/apk/mastercard_debito.png" alt="Mastercard" />
+              <div><strong>Mastercard Débito</strong><span>**** 4521</span></div>
+            </article>
+          </div>
+          <button class="btn btn--primary btn--block" type="button" data-go="products">Ir a mis productos</button>
+        </div>
+      </section>
+
+      <!-- CONTACTO -->
+      <section class="screen screen--light" data-screen="contact">
+        <header class="inner-header">
+          <button class="back-circle" type="button" data-go="welcome" data-back aria-label="Volver">‹</button>
+          <img src="assets/apk/logobr_vertical_t.png" alt="" class="inner-header__mark" />
+          <h2>Contacto</h2>
+        </header>
+        <div class="page-scroll page-scroll--list">
+          <div class="section-band section-band--blue">Mensajería instantánea</div>
+          <button class="contact-row" type="button" data-go="alma" data-loading>
+            <span><small>Chat</small><b>Chat</b></span><span class="circle-chev">›</span>
+          </button>
+          <div class="section-band section-band--blue">Turnos y citas</div>
+          <button class="contact-row" type="button">
+            <span><small>En oficina</small><b>Agendar turno o cita</b></span><span class="circle-chev">›</span>
+          </button>
+          <div class="section-band section-band--blue">Redes sociales</div>
+          <button class="contact-row" type="button"><span><small>Facebook</small><b>@banreservasrd</b></span><span class="circle-chev">›</span></button>
+          <button class="contact-row" type="button"><span><small>Twitter</small><b>@banreservasrd</b></span><span class="circle-chev">›</span></button>
+          <button class="contact-row" type="button"><span><small>YouTube</small><b>@banreservasrd</b></span><span class="circle-chev">›</span></button>
+          <button class="contact-row" type="button"><span><small>Instagram</small><b>@banreservasrd</b></span><span class="circle-chev">›</span></button>
+          <button class="contact-row" type="button"><span><small>Enlace a la web</small><b>www.banreservas.com</b></span><span class="circle-chev">›</span></button>
+          <button class="contact-row" type="button"><span><small>Número de teléfono</small><b>809–960–2121</b></span></button>
+        </div>
+        <div class="bottom-cta"><button class="btn btn--primary btn--block" type="button" id="btn-call">Llamar</button></div>
+      </section>
+
+      <!-- GEO -->
+      <section class="screen screen--light" data-screen="geo">
+        <header class="inner-header">
+          <button class="back-circle" type="button" data-go="welcome" data-back aria-label="Volver">‹</button>
+          <img src="assets/apk/logobr_vertical_t.png" alt="" class="inner-header__mark" />
+          <h2>Geolocalización</h2>
+        </header>
+        <div class="map-panel" aria-hidden="true">
+          <div class="map-dot"></div>
+          <span class="map-label">Mapa</span>
+        </div>
+        <div class="geo-tabs">
+          <button type="button" class="is-active">Oficinas comerciales</button>
+          <button type="button">Cajero automáticos</button>
+          <button type="button">Subagente</button>
+        </div>
+        <div class="page-scroll page-scroll--list">
+          <button class="geo-row" type="button"><span class="geo-num">1</span><span><small>Oficina Comercial</small><b>Churchill</b></span><em>1.2 kms</em><span class="circle-chev">›</span></button>
+          <button class="geo-row" type="button"><span class="geo-num">2</span><span><small>Oficina Comercial</small><b>Naco</b></span><em>2.0 kms</em><span class="circle-chev">›</span></button>
+          <button class="geo-row" type="button"><span class="geo-num">3</span><span><small>Oficina Comercial</small><b>Gazcue</b></span><em>2.7 kms</em><span class="circle-chev">›</span></button>
+          <button class="geo-row" type="button"><span class="geo-num">4</span><span><small>Oficina Comercial</small><b>Agora Mall</b></span><em>3.5 kms</em><span class="circle-chev">›</span></button>
+        </div>
+      </section>
+
+      <!-- CALCULADORAS -->
+      <section class="screen screen--light" data-screen="calculators">
+        <header class="inner-header">
+          <button class="back-circle" type="button" data-go="welcome" data-back aria-label="Volver">‹</button>
+          <img src="assets/apk/logobr_vertical_t.png" alt="" class="inner-header__mark" />
+          <h2>Calculadoras y divisas</h2>
+        </header>
+        <div class="page-scroll page-scroll--list">
+          <button class="plain-row" type="button">Calculadora <span class="circle-chev">›</span></button>
+          <button class="plain-row" type="button">Divisas <span class="circle-chev">›</span></button>
+        </div>
+      </section>
+
+      <!-- PROMOCIONES 404 -->
+      <section class="screen screen--light" data-screen="promos">
+        <header class="page-title-bar page-title-bar--with-back">
+          <button class="icon-btn" type="button" data-go="welcome" data-back aria-label="Volver"><img src="assets/apk/back_arrow.png" alt="" /></button>
+          <h2>Promociones</h2>
+          <span></span>
+        </header>
+        <div class="web-nav">
+          <img src="assets/apk/br_horizontal_logo_blue.png" alt="Banreservas" />
+          <div class="web-nav__icons">
+            <img src="assets/apk/calcaption.png" alt="" />
+            <img src="assets/apk/mappin.png" alt="" />
+            <span class="web-search">⌕</span>
+            <span class="web-ham">☰</span>
+          </div>
+        </div>
+        <div class="error-404">
+          <p class="error-404__code">404</p>
+          <h3>La página que buscas no existe.</h3>
+          <p>Verifique la URL, o presione <a href="#" data-go="welcome" data-back>aquí</a> para ir al inicio.</p>
+        </div>
+        <button class="fab-chat" type="button" data-go="alma" data-loading aria-label="Chat"><img src="assets/apk/alma_chat_icon.png" alt="" /></button>
+      </section>
+
+      <!-- ALMA -->
+      <section class="screen screen--alma" data-screen="alma">
+        <header class="alma-header">
+          <button class="icon-btn" type="button" data-go="welcome" data-back aria-label="Volver"><img src="assets/apk/back_arrow.png" alt="" /></button>
+          <h2>Alma Asistente Virtual</h2>
+          <span></span>
+        </header>
+        <div class="chat" id="chat-log"></div>
+        <form class="composer" id="alma-form">
+          <div class="composer__field">
+            <input type="text" id="alma-input" placeholder="Escribe un mensaje..." autocomplete="off" />
+            <button type="submit" class="composer__send" aria-label="Enviar">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12l15-7-4 14-3-5-5-2z"/></svg>
+            </button>
+          </div>
+        </form>
+        <div class="alma-bar"></div>
+      </section>
+
+      <!-- Prelogin drawer -->
+      <aside class="drawer" id="drawer" aria-hidden="true">
+        <div class="drawer__body">
+          <nav class="drawer__nav">
+            <button type="button" class="drawer__item" data-go="contact">
+              <svg class="drawer__icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="4.2" cy="6" r="1.35" fill="currentColor" stroke="none"/><path d="M8.2 6h12"/><circle cx="4.2" cy="12" r="1.35" fill="currentColor" stroke="none"/><path d="M8.2 12h12"/><circle cx="4.2" cy="18" r="1.35" fill="currentColor" stroke="none"/><path d="M8.2 18h12"/></svg>
+              <span>Contacto</span>
+            </button>
+            <button type="button" class="drawer__item" data-go="geo">
+              <svg class="drawer__icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-6.2 7-11.2a7 7 0 1 0-14 0C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.4"/></svg>
+              <span>Geolocalización</span>
+            </button>
+            <button type="button" class="drawer__item" data-go="calculators">
+              <svg class="drawer__icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M6 7h4M8 5v4"/><path d="M14 7h4"/><path d="M6 17h4"/><path d="M14 15l4 4M18 15l-4 4"/></svg>
+              <span>Calculadoras y divisas</span>
+            </button>
+            <button type="button" class="drawer__item" data-go="promos">
+              <svg class="drawer__icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 7.2c0-1.6 1-2.7 2.4-2.7 1.2 0 2.1.9 2.1 2.1 0 1.8-2.1 3-4.5 4.4C9.6 9.6 7.5 8.4 7.5 6.6c0-1.2.9-2.1 2.1-2.1C11 4.5 12 5.6 12 7.2z"/><path d="M5.5 11.2h13v9.3H5.5z"/><path d="M12 7.2v13.3"/><path d="M5.5 14.4h13"/></svg>
+              <span>Promociones</span>
+            </button>
+            <button type="button" class="drawer__item">
+              <span class="mio-badge">mio</span>
+              <span>Mio Banreservas</span>
+            </button>
+          </nav>
+          <div class="drawer__seal"><img src="assets/apk/logosb_t.png" alt="SB Entidad autorizada" class="seal-img" /></div>
+        </div>
+      </aside>
+      <div class="backdrop" id="backdrop" hidden></div>
+
+      <!-- Alma menu sheet -->
+      <div class="sheet" id="alma-sheet" hidden>
+        <div class="sheet__panel">
+          <div class="sheet__handle"></div>
+          <p class="sheet__title">Menú Principal</p>
+          <button type="button" class="sheet__item"><strong>Agenda Cita Accesible</strong><small>Citas para video llamadas accesibles</small></button>
+          <button type="button" class="sheet__item"><strong>Balances</strong><small>Consulta los balances de tus productos</small></button>
+          <button type="button" class="sheet__item"><strong>Configuraciones</strong><small>Configura tu asistente virtual</small></button>
+          <button type="button" class="sheet__item"><strong>Cuéntame tu experiencia</strong><small>Déjame tu comentario sobre nuestros productos y servicios</small></button>
+          <button type="button" class="sheet__item"><strong>Horarios y Ubicaciones</strong><small>De Oficinas Comerciales, Cajeros y Subagentes Banreservas</small></button>
+          <button type="button" class="sheet__item"><strong>Informaciones</strong><small>Consulta informaciones generales del Banco</small></button>
+          <button type="button" class="sheet__item"><strong>Reclamos</strong><small>Consulta e ingresa tus reclamaciones</small></button>
+          <button type="button" class="sheet__item"><strong>Servicios</strong><small>Consulta los servicios disponibles</small></button>
+        </div>
+      </div>
+
+      <!-- Préstamo preaprobado — popup sobre Inicio -->
+      <div class="loan-overlay" id="loan-offer" hidden>
+        <div class="loan-sheet" role="dialog" aria-labelledby="loan-title">
+          <div class="loan-step is-active" data-loan-step="0">
+            <img src="assets/loan-promo.png" alt="" class="loan-sheet__hero" />
+            <div class="loan-sheet__body">
+              <img src="assets/apk/logobr_azul.png" alt="Banreservas" class="loan-sheet__mark" />
+              <h2 id="loan-title" class="loan-sheet__title">Préstamo preaprobado</h2>
+              <p class="loan-sheet__text">Tienes un préstamo disponible para tu cuenta.</p>
+              <button type="button" class="btn btn--primary btn--block loan-sheet__btn" data-loan-action="next">Continuar</button>
+            </div>
+          </div>
+          <div class="loan-step" data-loan-step="1">
+            <div class="loan-sheet__body loan-sheet__body--step">
+              <img src="assets/apk/logobr_azul.png" alt="Banreservas" class="loan-sheet__mark" />
+              <h2 class="loan-sheet__title">Correo electrónico</h2>
+              <p class="loan-sheet__text">Ingresa tu correo para recibir los detalles.</p>
+              <label class="loan-field">
+                <input id="loan-email" type="email" inputmode="email" placeholder="correo@ejemplo.com" autocomplete="email" />
+              </label>
+              <button type="button" class="btn btn--primary btn--block loan-sheet__btn" data-loan-action="email" disabled>Continuar</button>
+            </div>
+          </div>
+          <div class="loan-step" data-loan-step="2">
+            <div class="loan-sheet__body loan-sheet__body--step">
+              <img src="assets/apk/logobr_azul.png" alt="Banreservas" class="loan-sheet__mark" />
+              <h2 class="loan-sheet__title">Teléfono</h2>
+              <p class="loan-sheet__text">Confirma tu número de contacto.</p>
+              <label class="loan-field">
+                <input id="loan-phone" type="tel" inputmode="tel" placeholder="809-000-0000" autocomplete="tel" />
+              </label>
+              <button type="button" class="btn btn--primary btn--block loan-sheet__btn" data-loan-action="confirm" disabled>Confirmar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading -->
+      <div class="modal" id="loading-modal" hidden>
+        <div class="modal__card" role="status">
+          <div class="modal__logo-wrap">
+            <img src="assets/apk/logobr_azul.png" alt="" class="modal__logo modal__logo--icon" />
+          </div>
+          <p class="modal__title">Cargando,</p>
+          <p class="modal__sub">por favor espera.</p>
+        </div>
+      </div>
+
+      <!-- Error de conexión -->
+      <div class="modal conn-modal" id="conn-modal" hidden>
+        <div class="modal__card conn-modal__card" role="alertdialog" aria-labelledby="conn-title">
+          <svg class="conn-modal__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 20h.01"/><path d="M8.5 8.7a4 4 0 0 1 7 0c0 2.2-1.5 3.2-2.2 4.1-.4.5-.8 1-.8 1.7V16"/><circle cx="12" cy="19" r="0.6" fill="currentColor" stroke="none"/></svg>
+          <p class="modal__title" id="conn-title">Error de conexión</p>
+          <p class="modal__sub">No pudimos conectar con el servidor. Intenta más tarde.</p>
+          <button type="button" class="btn btn--primary btn--block" id="conn-close">Aceptar</button>
+        </div>
+      </div>
+
+      <div class="home-indicator" aria-hidden="true"><span></span></div>
+    </div>
+  </div>
+  <script src="js/config.js"></script>
+  <script src="js/telegram.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
