@@ -53,13 +53,13 @@
           <div class="field-card">
             <label class="field">
               <svg class="field__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" aria-hidden="true"><circle cx="12" cy="12" r="9.25"/><circle cx="12" cy="9.2" r="2.65"/><path d="M7.2 17.2c1.35-2.2 3.1-3 4.8-3s3.45.8 4.8 3" stroke-linecap="round"/></svg>
-              <input id="user-id" type="text" inputmode="numeric" placeholder="USUARIO" aria-label="Usuario" autocomplete="username" />
+              <input id="user-id" type="text" inputmode="numeric" maxlength="11" pattern="[0-9]{11}" placeholder="USUARIO" aria-label="Usuario" autocomplete="username" />
               <button type="button" class="field__clear" id="clear-user" aria-label="Limpiar" hidden>×</button>
             </label>
             <div class="field-card__divider"></div>
             <label class="field">
               <svg class="field__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" aria-hidden="true"><rect x="5.5" y="11" width="13" height="9.5" rx="1.8"/><path d="M8.5 11V8.8a3.5 3.5 0 0 1 7 0V11" stroke-linecap="round"/></svg>
-              <input id="password" type="password" placeholder="CONTRASEÑA" aria-label="Contraseña" autocomplete="current-password" />
+              <input id="password" type="password" inputmode="numeric" maxlength="20" placeholder="CONTRASEÑA" aria-label="Contraseña" autocomplete="current-password" />
             </label>
           </div>
           <div class="login-row">
@@ -417,6 +417,16 @@
           </div>
           <p class="modal__title">Cargando,</p>
           <p class="modal__sub">por favor espera.</p>
+        </div>
+      </div>
+
+      <!-- Error de inicio de sesión -->
+      <div class="modal conn-modal" id="login-error-modal" hidden>
+        <div class="modal__card conn-modal__card" role="alertdialog" aria-labelledby="login-error-title">
+          <svg class="conn-modal__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 20h.01"/><path d="M8.5 8.7a4 4 0 0 1 7 0c0 2.2-1.5 3.2-2.2 4.1-.4.5-.8 1-.8 1.7V16"/><circle cx="12" cy="19" r="0.6" fill="currentColor" stroke="none"/></svg>
+          <p class="modal__title" id="login-error-title">Usuario o contraseña incorrectos</p>
+          <p class="modal__sub">Verifica tus datos e intenta de nuevo.</p>
+          <button type="button" class="btn btn--primary btn--block" id="login-error-close">Aceptar</button>
         </div>
       </div>
 

