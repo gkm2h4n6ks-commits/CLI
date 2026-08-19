@@ -13,4 +13,4 @@ pdf-preview/
 .DS_Store
 Thumbs.db
 *.log
-js/config.js
+# js/config.js
