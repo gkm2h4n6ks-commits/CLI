@@ -9,5 +9,8 @@
     "python": "python -m http.server 5173 --bind 127.0.0.1",
     "deploy": "npx --yes vercel",
     "deploy:prod": "npx --yes vercel --prod"
+  },
+  "devDependencies": {
+    "vercel": "^59.1.4"
   }
 }
